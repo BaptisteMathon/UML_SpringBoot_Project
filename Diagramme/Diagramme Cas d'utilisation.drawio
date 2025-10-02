@@ -5,7 +5,7 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="Ku4oZlPeEh7fANMUZ4SY-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="370" y="80" width="350" height="500" as="geometry" />
+          <mxGeometry x="370" y="30" width="350" height="550" as="geometry" />
         </mxCell>
         <mxCell id="Ku4oZlPeEh7fANMUZ4SY-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Ku4oZlPeEh7fANMUZ4SY-1" target="Ku4oZlPeEh7fANMUZ4SY-7" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -35,7 +35,7 @@
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="350" y="250" />
-              <mxPoint x="350" y="140" />
+              <mxPoint x="350" y="160" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -113,8 +113,17 @@
         <mxCell id="Ku4oZlPeEh7fANMUZ4SY-15" value="utilisateur connecté" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="620" y="410" width="90" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Ku4oZlPeEh7fANMUZ4SY-26" value="authentification" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="430" y="110" width="90" height="60" as="geometry" />
+        <mxCell id="Ku4oZlPeEh7fANMUZ4SY-26" value="connexion" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="430" y="130" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-2VV4v19sb74rrl99u0D-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="-2VV4v19sb74rrl99u0D-1" target="-2VV4v19sb74rrl99u0D-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-2VV4v19sb74rrl99u0D-1" value="Visiteur" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="50" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-2VV4v19sb74rrl99u0D-2" value="Inscription" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="50" width="90" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
