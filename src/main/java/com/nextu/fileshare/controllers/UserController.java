@@ -1,6 +1,10 @@
 package com.nextu.fileshare.controllers;
 
+import com.nextu.fileshare.dto.UserCreateDTO;
+import com.nextu.fileshare.dto.UserResponseDTO;
+import com.nextu.fileshare.dto.UserResponseGetDTO;
 import com.nextu.fileshare.entities.User;
+import com.nextu.fileshare.mappers.UserMapper;
 import com.nextu.fileshare.services.UserService;
 import com.nextu.fileshare.services.UserServiceImpl;
 import com.nextu.fileshare.utils.EmailSender;
@@ -14,38 +18,25 @@ import java.util.Map;
 @RestController
 public class UserController {
 
-    @GetMapping(path = "/user", produces = MediaType.APPLICATION_XML_VALUE)
-    public List<User> getUser() {
-        User u1 = new User();
-        u1.setEmail("baptiste@gmail.com");
-        u1.setPassword("1234");
-        u1.setId(1);
-        u1.setAdmin(true);
-        u1.setPrenom("Baptiste");
-        u1.setNom("MATHON");
+    private final UserService userService;
 
-        User u2 = new User();
-        u2.setEmail("test@gmail.com");
-        u2.setPassword("1234");
-        u2.setId(2);
-        u2.setAdmin(false);
-        u2.setPrenom("test");
-        u2.setNom("test");
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
-        User u3 = new User();
-        u3.setEmail("toto@gmail.com");
-        u3.setPassword("1234");
-        u3.setId(3);
-        u3.setAdmin(false);
-        u3.setPrenom("toto");
-        u3.setNom("toto");
+    @GetMapping(path = "/user", produces = {MediaType.APPLICATION_JSON_VALUE,  MediaType.APPLICATION_XML_VALUE})
+    public List<UserResponseGetDTO> getUser() {
 
-        return List.of(u1, u2, u3);
+        List<User> allUsers = userService.getAllUsers();
+        return UserMapper.toDTOList(allUsers);
+
     }
 
     @PostMapping(value = "/users",consumes =  MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String users(@RequestBody User userInfo) {
-        return "utilisateur créé, user : " + userInfo.getEmail();
+    public UserResponseDTO users(@RequestBody UserCreateDTO dto) {
+        User user = UserMapper.toEntity(dto);
+        User savedUser = userService.create(user);
+        return UserMapper.toDTO(savedUser);
     }
 
 //    @PostMapping("/users")
